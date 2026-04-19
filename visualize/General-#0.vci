@@ -1,0 +1,261 @@
+file 158748 1776533929                                          
+version 3
+run General-0-20260418-17:38:14-56628
+attr configname General
+attr datetime 20260418-17:38:14
+attr datetimef 20260418-173814
+attr experiment General
+attr inifile Raven.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RSUExampleScenario
+attr processid 56628
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../images
+config network RSUExampleScenario
+config record-eventlog true
+config eventlog-message-detail-pattern *RavenVehicleApp*
+config *.connectionManager.pMax 20000mW
+config *.connectionManager.sat -120dBm
+config *.connectionManager.alpha 2.0
+config *.rsu[*].nic.phy80211p.txPower 20000mW
+config *.node[*].nic.phy80211p.txPower 20000mW
+config *.rsu[*].nic.phy80211p.minPowerLevel -110dBm
+config *.node[*].nic.phy80211p.minPowerLevel -110dBm
+config *.rsu[*].nic.mac1609_4.txQueueLimit 1000
+config *.node[*].nic.mac1609_4.txQueueLimit 1000
+config **.result-recording-modes all
+config **.scalar-recording true
+config **.vector-recording true
+config cmdenv-express-mode false
+config cmdenv-autoflush true
+config cmdenv-status-frequency 1s
+config **.cmdenv-log-level debug
+config **.nic.cmdenv-log-level off
+config **.phy.cmdenv-log-level off
+config debug-on-errors true
+config print-undisposed true
+config sim-time-limit 100s
+config image-path ../../images
+config **.nic.mac1609_4.pcapRecorderType "\"PcapRecorder\""
+config *.node[*].nic.mac1609_4.pcapRecorder.enabled true
+config *.rsu[*].nic.mac1609_4.pcapRecorder.enabled true
+config *.rsu[*].nic.mac1609_4.pcapRecorder.pcapFile "\"results/rsu_capture.pcap\""
+config *.node[*].applType "\"RavenVehicleApp\""
+config *.node[*].appl.headerLength "256 bit"
+config *.node[*].appl.sendBeacons true
+config *.node[*].appl.dataOnSch false
+config *.node[*].appl.beaconInterval 1s
+config *.node[0].appl.isAttacker true
+config *.rsu[*].applType "\"RavenRSUApp\""
+config *.rsu[*].appl.headerLength "256 bit"
+config *.rsu[*].appl.sendBeacons true
+config *.rsu[*].appl.dataOnSch false
+config *.rsu[*].appl.beaconInterval 1s
+config *.rsu[*].appl.beaconUserPriority 7
+config *.rsu[*].appl.dataUserPriority 5
+config *.connectionManager.sendDirect true
+config *.connectionManager.maxInterfDist 2600m
+config *.connectionManager.drawMaxIntfDist false
+config *.**.nic.mac1609_4.useServiceChannel false
+config *.**.nic.mac1609_4.txPower 20mW
+config *.**.nic.mac1609_4.bitrate 6Mbps
+config *.**.nic.phy80211p.minPowerLevel -110dBm
+config *.**.nic.phy80211p.useNoiseFloor true
+config *.**.nic.phy80211p.noiseFloor -98dBm
+config *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.usePropagationDelay true
+config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+config *.playgroundSizeX 2500m
+config *.playgroundSizeY 2500m
+config *.playgroundSizeZ 50m
+config *.annotations.draw true
+config *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+config *.manager.updateInterval 1s
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
+config *.rsu[0].mobility.x 2000
+config *.rsu[0].mobility.y 2000
+config *.rsu[0].mobility.z 3
+config *.node[*].veinsmobility.x 0
+config *.node[*].veinsmobility.y 0
+config *.node[*].veinsmobility.z 0
+config *.node[*].veinsmobility.setHostSpeed true
+config *.node[*0].veinsmobility.accidentCount 1
+config *.node[*0].veinsmobility.accidentStart 73s
+config *.node[*0].veinsmobility.accidentDuration 50s
+
+vector 0 RSUExampleScenario.rsu[0].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 1 RSUExampleScenario.rsu[0].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 2 RSUExampleScenario.rsu[0].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 3 RSUExampleScenario.rsu[0].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 4 RSUExampleScenario.rsu[0].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 5 RSUExampleScenario.rsu[0].nic.phy80211p RadioState ETV
+vector 6 RSUExampleScenario.rsu[0].nic.phy80211p RadioChannel ETV
+vector 7 RSUExampleScenario.node[0].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 8 RSUExampleScenario.node[0].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 9 RSUExampleScenario.node[0].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 10 RSUExampleScenario.node[0].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 11 RSUExampleScenario.node[0].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 12 RSUExampleScenario.node[0].nic.phy80211p RadioState ETV
+vector 13 RSUExampleScenario.node[0].nic.phy80211p RadioChannel ETV
+vector 14 RSUExampleScenario.manager posx ETV
+vector 15 RSUExampleScenario.manager posy ETV
+vector 16 RSUExampleScenario.manager speed ETV
+vector 17 RSUExampleScenario.manager acceleration ETV
+vector 18 RSUExampleScenario.manager co2emission ETV
+vector 19 RSUExampleScenario.node[1].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 20 RSUExampleScenario.node[1].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 21 RSUExampleScenario.node[1].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 22 RSUExampleScenario.node[1].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 23 RSUExampleScenario.node[1].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 24 RSUExampleScenario.node[1].nic.phy80211p RadioState ETV
+vector 25 RSUExampleScenario.node[1].nic.phy80211p RadioChannel ETV
+vector 26 RSUExampleScenario.manager posx ETV
+vector 27 RSUExampleScenario.manager posy ETV
+vector 28 RSUExampleScenario.manager speed ETV
+vector 29 RSUExampleScenario.manager acceleration ETV
+vector 30 RSUExampleScenario.manager co2emission ETV
+vector 31 RSUExampleScenario.node[2].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 32 RSUExampleScenario.node[2].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 33 RSUExampleScenario.node[2].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 34 RSUExampleScenario.node[2].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 35 RSUExampleScenario.node[2].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 36 RSUExampleScenario.node[2].nic.phy80211p RadioState ETV
+vector 37 RSUExampleScenario.node[2].nic.phy80211p RadioChannel ETV
+vector 38 RSUExampleScenario.manager posx ETV
+vector 39 RSUExampleScenario.manager posy ETV
+vector 40 RSUExampleScenario.manager speed ETV
+vector 41 RSUExampleScenario.manager acceleration ETV
+vector 42 RSUExampleScenario.manager co2emission ETV
+vector 43 RSUExampleScenario.node[3].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 44 RSUExampleScenario.node[3].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 45 RSUExampleScenario.node[3].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 46 RSUExampleScenario.node[3].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 47 RSUExampleScenario.node[3].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 48 RSUExampleScenario.node[3].nic.phy80211p RadioState ETV
+vector 49 RSUExampleScenario.node[3].nic.phy80211p RadioChannel ETV
+vector 50 RSUExampleScenario.manager posx ETV
+vector 51 RSUExampleScenario.manager posy ETV
+vector 52 RSUExampleScenario.manager speed ETV
+vector 53 RSUExampleScenario.manager acceleration ETV
+vector 54 RSUExampleScenario.manager co2emission ETV
+vector 55 RSUExampleScenario.node[4].nic.mac1609_4 channelBusy:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+vector 56 RSUExampleScenario.node[4].nic.mac1609_4 collisions:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigCollision
+vector 57 RSUExampleScenario.node[4].nic.mac1609_4 sentPackets:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentPacket
+vector 58 RSUExampleScenario.node[4].nic.mac1609_4 sentAcks:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigSentAck
+vector 59 RSUExampleScenario.node[4].nic.mac1609_4 retriesExceeded:vector ETV
+attr recordingmode vector
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+vector 60 RSUExampleScenario.node[4].nic.phy80211p RadioState ETV
+vector 61 RSUExampleScenario.node[4].nic.phy80211p RadioChannel ETV
+vector 62 RSUExampleScenario.manager posx ETV
+vector 63 RSUExampleScenario.manager posy ETV
+vector 64 RSUExampleScenario.manager speed ETV
+vector 65 RSUExampleScenario.manager acceleration ETV
+vector 66 RSUExampleScenario.manager co2emission ETV
+0	10343 16203 0 11975 0 99.844410576895 651 0 1 325 325
+2	26546 5591 4 11960 0.844278 99.844273576895 225 1 1 225 225
+7	32137 12458 11 11979 1 99.844411109295 501 0 1 250 250
+9	44595 937 29 11921 2.4353499673 99.000000044495 37 1 1 37 37
+14	45532 2688 11 11998 1 100 100 2140.3530144126 2450.6249284665 231210.13200533 536195960.72174
+15	48220 2696 11 11998 1 100 100 1578.4613427464 2120.9425833616 194265.05090965 380853709.33906
+16	50916 2306 26 11998 2 100 99 0 13.998502501769 943.60480119806 12646.790109142
+17	53222 2418 55 11998 3 100 98 -4.5 2.2078255666373 -4.1061966058897 110.257253493
+18	55640 2337 55 11998 3 100 98 0.973 8.9023657158011 206.17363991105 668.91497098746
+19	57977 12772 70 11983 4 99.844411125963 493 0 1 246 246
+21	70749 724 113 9336 5.754119904559 68.192416976971 28 1 1 28 28
+26	71473 2616 70 11998 4 100 97 2144.6627093545 2450.4762349875 224947.44682497 523141603.46983
+27	74089 2623 70 11998 4 100 97 1578.4506684253 2120.5704686744 188050.00295967 368001563.36823
+28	76712 2473 90 11998 5 100 96 0 13.998578815588 938.75011720145 12469.441399887
+29	79185 2628 150 11998 6 100 95 -4.4608324981877 2.0360211738362 -4.0332649588119 84.164137038926
+30	81813 2354 150 11998 6 100 95 0.973 8.4454142222778 201.28695689642 639.32780306152
+31	84167 12490 171 11987 7 99.844411142632 483 0 1 241 241
+33	96657 1096 174 9396 7.779499 68.218892108286 43 1 1 43 43
+38	97753 2546 171 11998 7 100 94 2148.9724041201 2450.6565878353 218569.83016088 509572974.80308
+39	100299 2540 171 11998 7 100 94 1578.4476927174 2120.9623304959 181947.85157579 355565088.4588
+40	102839 2460 223 11998 8 100 93 0 13.995444845858 934.39774534754 12399.42962056
+41	105299 2616 301 11998 9 100 92 -4.439656564949 1.9953480610903 -3.930963162637 79.63424528136
+42	107915 2309 301 11998 9 100 92 0.973 8.2469806235914 197.60579495606 639.07584810298
+43	110224 12243 328 11991 10 99.844411159302 471 0 1 235 235
+45	122467 753 395 9198 11.435271556688 68.165486486212 29 1 1 29 29
+50	123220 2476 328 11998 10 100 91 2153.2820989847 2450.5209289911 212175.59745062 495936958.93598
+51	125696 2472 328 11998 10 100 91 1578.4548774119 2120.9001720846 175817.90601079 343013270.93732
+52	128168 2426 392 11998 11 100 90 0 13.994833892267 928.47545854522 12316.721437535
+53	130594 2586 2008 11998 12 100 89 -4.4516438954996 2.1600366940722 -4.0076977833542 82.272038400737
+54	133180 2255 2008 11998 12 100 89 0.973 8.3562987285411 195.14993239997 651.67907058095
+55	135435 10626 2041 11995 13 99.844411175972 407 0 1 203 203
+57	146061 751 2154 9471 14.635180590094 68.271477265678 29 1 1 29 29
+62	146812 2393 2041 11998 13 100 88 2157.5917937593 2450.2412775895 206143.72412029 483949346.8752
+63	149205 2392 2041 11998 13 100 88 1578.4413889889 2120.7794856783 168863.25763702 327370688.5163
+64	151597 2381 2113 11998 14 100 87 0 13.998651232829 923.5968897342 11988.412556928
+65	153978 2546 2222 11998 15 100 86 -3.0797774601796 2.3075221271976 -4.1202440707026 75.309274518235
+66	156524 2223 2222 11998 15 100 86 0.973 8.3477496870283 187.42980921487 586.37474293374
+

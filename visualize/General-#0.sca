@@ -1,0 +1,1037 @@
+version 3
+run General-0-20260418-17:38:14-56628
+attr configname General
+attr datetime 20260418-17:38:14
+attr datetimef 20260418-173814
+attr experiment General
+attr inifile Raven.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RSUExampleScenario
+attr processid 56628
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../images
+config network RSUExampleScenario
+config record-eventlog true
+config eventlog-message-detail-pattern *RavenVehicleApp*
+config *.connectionManager.pMax 20000mW
+config *.connectionManager.sat -120dBm
+config *.connectionManager.alpha 2.0
+config *.rsu[*].nic.phy80211p.txPower 20000mW
+config *.node[*].nic.phy80211p.txPower 20000mW
+config *.rsu[*].nic.phy80211p.minPowerLevel -110dBm
+config *.node[*].nic.phy80211p.minPowerLevel -110dBm
+config *.rsu[*].nic.mac1609_4.txQueueLimit 1000
+config *.node[*].nic.mac1609_4.txQueueLimit 1000
+config **.result-recording-modes all
+config **.scalar-recording true
+config **.vector-recording true
+config cmdenv-express-mode false
+config cmdenv-autoflush true
+config cmdenv-status-frequency 1s
+config **.cmdenv-log-level debug
+config **.nic.cmdenv-log-level off
+config **.phy.cmdenv-log-level off
+config debug-on-errors true
+config print-undisposed true
+config sim-time-limit 100s
+config image-path ../../images
+config **.nic.mac1609_4.pcapRecorderType "\"PcapRecorder\""
+config *.node[*].nic.mac1609_4.pcapRecorder.enabled true
+config *.rsu[*].nic.mac1609_4.pcapRecorder.enabled true
+config *.rsu[*].nic.mac1609_4.pcapRecorder.pcapFile "\"results/rsu_capture.pcap\""
+config *.node[*].applType "\"RavenVehicleApp\""
+config *.node[*].appl.headerLength "256 bit"
+config *.node[*].appl.sendBeacons true
+config *.node[*].appl.dataOnSch false
+config *.node[*].appl.beaconInterval 1s
+config *.node[0].appl.isAttacker true
+config *.rsu[*].applType "\"RavenRSUApp\""
+config *.rsu[*].appl.headerLength "256 bit"
+config *.rsu[*].appl.sendBeacons true
+config *.rsu[*].appl.dataOnSch false
+config *.rsu[*].appl.beaconInterval 1s
+config *.rsu[*].appl.beaconUserPriority 7
+config *.rsu[*].appl.dataUserPriority 5
+config *.connectionManager.sendDirect true
+config *.connectionManager.maxInterfDist 2600m
+config *.connectionManager.drawMaxIntfDist false
+config *.**.nic.mac1609_4.useServiceChannel false
+config *.**.nic.mac1609_4.txPower 20mW
+config *.**.nic.mac1609_4.bitrate 6Mbps
+config *.**.nic.phy80211p.minPowerLevel -110dBm
+config *.**.nic.phy80211p.useNoiseFloor true
+config *.**.nic.phy80211p.noiseFloor -98dBm
+config *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.usePropagationDelay true
+config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+config *.playgroundSizeX 2500m
+config *.playgroundSizeY 2500m
+config *.playgroundSizeZ 50m
+config *.annotations.draw true
+config *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+config *.manager.updateInterval 1s
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
+config *.rsu[0].mobility.x 2000
+config *.rsu[0].mobility.y 2000
+config *.rsu[0].mobility.z 3
+config *.node[*].veinsmobility.x 0
+config *.node[*].veinsmobility.y 0
+config *.node[*].veinsmobility.z 0
+config *.node[*].veinsmobility.setHostSpeed true
+config *.node[*0].veinsmobility.accidentCount 1
+config *.node[*0].veinsmobility.accidentStart 73s
+config *.node[*0].veinsmobility.accidentDuration 50s
+
+par RSUExampleScenario.obstacles typename "\"org.car2x.veins.modules.obstacle.ObstacleControl\""
+par RSUExampleScenario.obstacles obstacles "<obstacles>...</obstacles> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:40"
+par RSUExampleScenario.obstacles gridCellSize 250
+par RSUExampleScenario.annotations typename "\"org.car2x.veins.modules.world.annotations.AnnotationManager\""
+par RSUExampleScenario.annotations draw true
+par RSUExampleScenario.annotations annotations "<annotations/> at content:1"
+par RSUExampleScenario.connectionManager typename "\"org.car2x.veins.base.connectionManager.ConnectionManager\""
+par RSUExampleScenario.connectionManager sendDirect true
+par RSUExampleScenario.connectionManager maxInterfDist 2600m
+attr unit m
+par RSUExampleScenario.connectionManager drawMaxIntfDist false
+par RSUExampleScenario.world typename "\"org.car2x.veins.base.modules.BaseWorldUtility\""
+par RSUExampleScenario.world playgroundSizeX 2500m
+attr unit m
+par RSUExampleScenario.world playgroundSizeY 2500m
+attr unit m
+par RSUExampleScenario.world playgroundSizeZ 50m
+attr unit m
+par RSUExampleScenario.world useTorus false
+par RSUExampleScenario.world use2D false
+par RSUExampleScenario.manager typename "\"org.car2x.veins.modules.mobility.traci.TraCIScenarioManagerLaunchd\""
+par RSUExampleScenario.manager connectAt 0s
+attr unit s
+par RSUExampleScenario.manager firstStepAt -1s
+attr unit s
+par RSUExampleScenario.manager updateInterval 1s
+attr unit s
+par RSUExampleScenario.manager moduleType "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.manager moduleName "\"node\""
+par RSUExampleScenario.manager moduleDisplayString "\"*='i=veins/node/car;is=vs'\""
+par RSUExampleScenario.manager trafficLightModuleType "\"\""
+par RSUExampleScenario.manager trafficLightModuleName "\"tls\""
+par RSUExampleScenario.manager trafficLightFilter "\"\""
+par RSUExampleScenario.manager trafficLightModuleDisplayString "\"i=veins/node/trafficlight;is=vs\""
+par RSUExampleScenario.manager host "\"localhost\""
+par RSUExampleScenario.manager port 9999
+par RSUExampleScenario.manager seed -1
+par RSUExampleScenario.manager autoShutdown true
+par RSUExampleScenario.manager margin 25
+par RSUExampleScenario.manager roiRoads "\"\""
+par RSUExampleScenario.manager roiRects "\"\""
+par RSUExampleScenario.manager penetrationRate 1
+par RSUExampleScenario.manager ignoreGuiCommands false
+par RSUExampleScenario.manager order -1
+par RSUExampleScenario.manager ignoreUnknownSubscriptionResults false
+par RSUExampleScenario.manager launchConfig "<launch>...</launch> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//erlangen.launchd.xml:35"
+scalar RSUExampleScenario.manager roiArea 0
+par RSUExampleScenario.roadsCanvasVisualizer typename "\"org.car2x.veins.visualizer.roads.RoadsCanvasVisualizer\""
+par RSUExampleScenario.roadsCanvasVisualizer enabled true
+par RSUExampleScenario.roadsCanvasVisualizer lineZIndex -1
+par RSUExampleScenario.roadsCanvasVisualizer lineColor "\"firebrick4\""
+par RSUExampleScenario.roadsCanvasVisualizer lineWidth 1
+par RSUExampleScenario.roadsCanvasVisualizer lineWidthZoom false
+par RSUExampleScenario.node[0].appl typename "\"RavenVehicleApp\""
+par RSUExampleScenario.node[0].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.node[0].appl sendBeacons true
+par RSUExampleScenario.node[0].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.node[0].appl beaconUserPriority 7
+par RSUExampleScenario.node[0].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.node[0].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.node[0].appl dataOnSch false
+par RSUExampleScenario.node[0].appl dataUserPriority 7
+par RSUExampleScenario.node[0].appl avoidBeaconSynchronization true
+par RSUExampleScenario.node[0].appl sendWSA false
+par RSUExampleScenario.node[0].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.node[0].appl wsaInterval 1s
+attr unit s
+par RSUExampleScenario.node[0].appl isAttacker true
+scalar RSUExampleScenario.node[0].appl generatedWSMs 38
+scalar RSUExampleScenario.node[0].appl receivedWSMs 0
+scalar RSUExampleScenario.node[0].appl generatedBSMs 0
+scalar RSUExampleScenario.node[0].appl receivedBSMs 56
+scalar RSUExampleScenario.node[0].appl generatedWSAs 0
+scalar RSUExampleScenario.node[0].appl receivedWSAs 0
+par RSUExampleScenario.node[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.node[0].nic.phy80211p recordStats false
+par RSUExampleScenario.node[0].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.node[0].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.node[0].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.node[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.node[0].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.node[0].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.node[0].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.node[0].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.node[0].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[0].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[0].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.node[0].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.node[0].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.node[0].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.node[0].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.node[0].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.node[0].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.node[0].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.node[0].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.node[0].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.node[0].nic.phy80211p busyTime 0.026766383838384
+par RSUExampleScenario.node[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.node[0].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.node[0].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.node[0].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.node[0].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.node[0].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.node[0].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.node[0].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.node[0].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.node[0].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.node[0].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.node[0].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.node[0].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.node[0].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.node[0].nic.mac1609_4 useAcks false
+par RSUExampleScenario.node[0].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.node[0].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 ReceivedBroadcasts 185
+scalar RSUExampleScenario.node[0].nic.mac1609_4 SentPackets 37
+scalar RSUExampleScenario.node[0].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 SNIRLostPackets 80
+scalar RSUExampleScenario.node[0].nic.mac1609_4 RXTXLostPackets 1
+scalar RSUExampleScenario.node[0].nic.mac1609_4 TotalLostPackets 81
+scalar RSUExampleScenario.node[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 TimesIntoBackoff 39
+scalar RSUExampleScenario.node[0].nic.mac1609_4 SlotsBackoff 65
+scalar RSUExampleScenario.node[0].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.node[0].nic.mac1609_4 totalBusyTime 1.316285
+scalar RSUExampleScenario.node[0].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.node[0].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.node[0].nic.mac1609_4 sentPackets:count 37
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.node[0].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.node[0].nic.mac1609_4 channelBusy:timeavg 0.013295808080808
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.node[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.node[0].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.node[0].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[0].veinsmobility notAffectedByHostState true
+par RSUExampleScenario.node[0].veinsmobility x 0
+par RSUExampleScenario.node[0].veinsmobility y 0
+par RSUExampleScenario.node[0].veinsmobility z 0
+par RSUExampleScenario.node[0].veinsmobility xOrientation 1
+par RSUExampleScenario.node[0].veinsmobility yOrientation 0
+par RSUExampleScenario.node[0].veinsmobility zOrientation 0
+par RSUExampleScenario.node[0].veinsmobility hostPositionOffset 0m
+attr unit m
+par RSUExampleScenario.node[0].veinsmobility setHostSpeed true
+par RSUExampleScenario.node[0].veinsmobility accidentCount 1
+par RSUExampleScenario.node[0].veinsmobility accidentStart 73s
+attr unit s
+par RSUExampleScenario.node[0].veinsmobility accidentDuration 50s
+attr unit s
+par RSUExampleScenario.node[0].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar RSUExampleScenario.node[0].veinsmobility startTime 1
+scalar RSUExampleScenario.node[0].veinsmobility totalTime 99
+scalar RSUExampleScenario.node[0].veinsmobility stopTime 100
+scalar RSUExampleScenario.node[0].veinsmobility minSpeed 0
+scalar RSUExampleScenario.node[0].veinsmobility maxSpeed 13.998502501769
+scalar RSUExampleScenario.node[0].veinsmobility totalDistance 941.74164454724
+scalar RSUExampleScenario.node[0].veinsmobility totalCO2Emission 206.17363991105
+par RSUExampleScenario.node[0] typename "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.node[0] applType "\"RavenVehicleApp\""
+par RSUExampleScenario.node[0] nicType "\"Nic80211p\""
+par RSUExampleScenario.node[0] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[1].appl typename "\"RavenVehicleApp\""
+par RSUExampleScenario.node[1].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.node[1].appl sendBeacons true
+par RSUExampleScenario.node[1].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.node[1].appl beaconUserPriority 7
+par RSUExampleScenario.node[1].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.node[1].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.node[1].appl dataOnSch false
+par RSUExampleScenario.node[1].appl dataUserPriority 7
+par RSUExampleScenario.node[1].appl avoidBeaconSynchronization true
+par RSUExampleScenario.node[1].appl sendWSA false
+par RSUExampleScenario.node[1].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.node[1].appl wsaInterval 1s
+attr unit s
+par RSUExampleScenario.node[1].appl isAttacker false
+scalar RSUExampleScenario.node[1].appl generatedWSMs 28
+scalar RSUExampleScenario.node[1].appl receivedWSMs 0
+scalar RSUExampleScenario.node[1].appl generatedBSMs 0
+scalar RSUExampleScenario.node[1].appl receivedBSMs 52
+scalar RSUExampleScenario.node[1].appl generatedWSAs 0
+scalar RSUExampleScenario.node[1].appl receivedWSAs 0
+par RSUExampleScenario.node[1].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.node[1].nic.phy80211p recordStats false
+par RSUExampleScenario.node[1].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.node[1].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.node[1].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.node[1].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.node[1].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.node[1].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.node[1].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.node[1].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.node[1].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[1].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[1].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.node[1].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.node[1].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.node[1].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.node[1].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.node[1].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.node[1].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.node[1].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.node[1].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.node[1].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.node[1].nic.phy80211p busyTime 0.011494333333333
+par RSUExampleScenario.node[1].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.node[1].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.node[1].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.node[1].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.node[1].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.node[1].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.node[1].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.node[1].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.node[1].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.node[1].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.node[1].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.node[1].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.node[1].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.node[1].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.node[1].nic.mac1609_4 useAcks false
+par RSUExampleScenario.node[1].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.node[1].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 ReceivedBroadcasts 185
+scalar RSUExampleScenario.node[1].nic.mac1609_4 SentPackets 28
+scalar RSUExampleScenario.node[1].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 SNIRLostPackets 46
+scalar RSUExampleScenario.node[1].nic.mac1609_4 RXTXLostPackets 40
+scalar RSUExampleScenario.node[1].nic.mac1609_4 TotalLostPackets 86
+scalar RSUExampleScenario.node[1].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 TimesIntoBackoff 28
+scalar RSUExampleScenario.node[1].nic.mac1609_4 SlotsBackoff 40
+scalar RSUExampleScenario.node[1].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.node[1].nic.mac1609_4 totalBusyTime 1.315604
+scalar RSUExampleScenario.node[1].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.node[1].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.node[1].nic.mac1609_4 sentPackets:count 28
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.node[1].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.node[1].nic.mac1609_4 channelBusy:timeavg 0.013704208333333
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.node[1].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.node[1].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.node[1].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[1].veinsmobility notAffectedByHostState true
+par RSUExampleScenario.node[1].veinsmobility x 0
+par RSUExampleScenario.node[1].veinsmobility y 0
+par RSUExampleScenario.node[1].veinsmobility z 0
+par RSUExampleScenario.node[1].veinsmobility xOrientation 1
+par RSUExampleScenario.node[1].veinsmobility yOrientation 0
+par RSUExampleScenario.node[1].veinsmobility zOrientation 0
+par RSUExampleScenario.node[1].veinsmobility hostPositionOffset 0m
+attr unit m
+par RSUExampleScenario.node[1].veinsmobility setHostSpeed true
+par RSUExampleScenario.node[1].veinsmobility accidentCount 0
+par RSUExampleScenario.node[1].veinsmobility accidentStart 45.8668s
+attr unit s
+par RSUExampleScenario.node[1].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par RSUExampleScenario.node[1].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar RSUExampleScenario.node[1].veinsmobility startTime 4
+scalar RSUExampleScenario.node[1].veinsmobility totalTime 96
+scalar RSUExampleScenario.node[1].veinsmobility stopTime 100
+scalar RSUExampleScenario.node[1].veinsmobility minSpeed 0
+scalar RSUExampleScenario.node[1].veinsmobility maxSpeed 13.998578815588
+scalar RSUExampleScenario.node[1].veinsmobility totalDistance 936.50241196728
+scalar RSUExampleScenario.node[1].veinsmobility totalCO2Emission 201.28695689642
+par RSUExampleScenario.node[1] typename "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.node[1] applType "\"RavenVehicleApp\""
+par RSUExampleScenario.node[1] nicType "\"Nic80211p\""
+par RSUExampleScenario.node[1] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[2].appl typename "\"RavenVehicleApp\""
+par RSUExampleScenario.node[2].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.node[2].appl sendBeacons true
+par RSUExampleScenario.node[2].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.node[2].appl beaconUserPriority 7
+par RSUExampleScenario.node[2].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.node[2].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.node[2].appl dataOnSch false
+par RSUExampleScenario.node[2].appl dataUserPriority 7
+par RSUExampleScenario.node[2].appl avoidBeaconSynchronization true
+par RSUExampleScenario.node[2].appl sendWSA false
+par RSUExampleScenario.node[2].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.node[2].appl wsaInterval 1s
+attr unit s
+par RSUExampleScenario.node[2].appl isAttacker false
+scalar RSUExampleScenario.node[2].appl generatedWSMs 43
+scalar RSUExampleScenario.node[2].appl receivedWSMs 0
+scalar RSUExampleScenario.node[2].appl generatedBSMs 0
+scalar RSUExampleScenario.node[2].appl receivedBSMs 49
+scalar RSUExampleScenario.node[2].appl generatedWSAs 0
+scalar RSUExampleScenario.node[2].appl receivedWSAs 0
+par RSUExampleScenario.node[2].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.node[2].nic.phy80211p recordStats false
+par RSUExampleScenario.node[2].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.node[2].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.node[2].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.node[2].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.node[2].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.node[2].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.node[2].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.node[2].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.node[2].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[2].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[2].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.node[2].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.node[2].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.node[2].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.node[2].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.node[2].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.node[2].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.node[2].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.node[2].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.node[2].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.node[2].nic.phy80211p busyTime 0.011244387096774
+par RSUExampleScenario.node[2].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.node[2].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.node[2].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.node[2].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.node[2].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.node[2].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.node[2].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.node[2].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.node[2].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.node[2].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.node[2].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.node[2].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.node[2].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.node[2].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.node[2].nic.mac1609_4 useAcks false
+par RSUExampleScenario.node[2].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.node[2].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 ReceivedBroadcasts 137
+scalar RSUExampleScenario.node[2].nic.mac1609_4 SentPackets 43
+scalar RSUExampleScenario.node[2].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 SNIRLostPackets 73
+scalar RSUExampleScenario.node[2].nic.mac1609_4 RXTXLostPackets 41
+scalar RSUExampleScenario.node[2].nic.mac1609_4 TotalLostPackets 114
+scalar RSUExampleScenario.node[2].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 TimesIntoBackoff 43
+scalar RSUExampleScenario.node[2].nic.mac1609_4 SlotsBackoff 67
+scalar RSUExampleScenario.node[2].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.node[2].nic.mac1609_4 totalBusyTime 1.314683
+scalar RSUExampleScenario.node[2].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.node[2].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.node[2].nic.mac1609_4 sentPackets:count 43
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.node[2].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.node[2].nic.mac1609_4 channelBusy:timeavg 0.014136376344086
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.node[2].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.node[2].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.node[2].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[2].veinsmobility notAffectedByHostState true
+par RSUExampleScenario.node[2].veinsmobility x 0
+par RSUExampleScenario.node[2].veinsmobility y 0
+par RSUExampleScenario.node[2].veinsmobility z 0
+par RSUExampleScenario.node[2].veinsmobility xOrientation 1
+par RSUExampleScenario.node[2].veinsmobility yOrientation 0
+par RSUExampleScenario.node[2].veinsmobility zOrientation 0
+par RSUExampleScenario.node[2].veinsmobility hostPositionOffset 0m
+attr unit m
+par RSUExampleScenario.node[2].veinsmobility setHostSpeed true
+par RSUExampleScenario.node[2].veinsmobility accidentCount 0
+par RSUExampleScenario.node[2].veinsmobility accidentStart 45.6554s
+attr unit s
+par RSUExampleScenario.node[2].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par RSUExampleScenario.node[2].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar RSUExampleScenario.node[2].veinsmobility startTime 7
+scalar RSUExampleScenario.node[2].veinsmobility totalTime 93
+scalar RSUExampleScenario.node[2].veinsmobility stopTime 100
+scalar RSUExampleScenario.node[2].veinsmobility minSpeed 0
+scalar RSUExampleScenario.node[2].veinsmobility maxSpeed 13.995444845858
+scalar RSUExampleScenario.node[2].veinsmobility totalDistance 931.74895212263
+scalar RSUExampleScenario.node[2].veinsmobility totalCO2Emission 197.60579495606
+par RSUExampleScenario.node[2] typename "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.node[2] applType "\"RavenVehicleApp\""
+par RSUExampleScenario.node[2] nicType "\"Nic80211p\""
+par RSUExampleScenario.node[2] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[3].appl typename "\"RavenVehicleApp\""
+par RSUExampleScenario.node[3].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.node[3].appl sendBeacons true
+par RSUExampleScenario.node[3].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.node[3].appl beaconUserPriority 7
+par RSUExampleScenario.node[3].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.node[3].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.node[3].appl dataOnSch false
+par RSUExampleScenario.node[3].appl dataUserPriority 7
+par RSUExampleScenario.node[3].appl avoidBeaconSynchronization true
+par RSUExampleScenario.node[3].appl sendWSA false
+par RSUExampleScenario.node[3].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.node[3].appl wsaInterval 1s
+attr unit s
+par RSUExampleScenario.node[3].appl isAttacker false
+scalar RSUExampleScenario.node[3].appl generatedWSMs 29
+scalar RSUExampleScenario.node[3].appl receivedWSMs 0
+scalar RSUExampleScenario.node[3].appl generatedBSMs 0
+scalar RSUExampleScenario.node[3].appl receivedBSMs 46
+scalar RSUExampleScenario.node[3].appl generatedWSAs 0
+scalar RSUExampleScenario.node[3].appl receivedWSAs 0
+par RSUExampleScenario.node[3].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.node[3].nic.phy80211p recordStats false
+par RSUExampleScenario.node[3].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.node[3].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.node[3].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.node[3].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.node[3].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.node[3].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.node[3].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.node[3].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.node[3].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[3].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[3].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.node[3].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.node[3].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.node[3].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.node[3].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.node[3].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.node[3].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.node[3].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.node[3].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.node[3].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.node[3].nic.phy80211p busyTime 0.013116
+par RSUExampleScenario.node[3].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.node[3].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.node[3].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.node[3].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.node[3].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.node[3].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.node[3].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.node[3].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.node[3].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.node[3].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.node[3].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.node[3].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.node[3].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.node[3].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.node[3].nic.mac1609_4 useAcks false
+par RSUExampleScenario.node[3].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.node[3].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 ReceivedBroadcasts 131
+scalar RSUExampleScenario.node[3].nic.mac1609_4 SentPackets 29
+scalar RSUExampleScenario.node[3].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 SNIRLostPackets 93
+scalar RSUExampleScenario.node[3].nic.mac1609_4 RXTXLostPackets 35
+scalar RSUExampleScenario.node[3].nic.mac1609_4 TotalLostPackets 128
+scalar RSUExampleScenario.node[3].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 TimesIntoBackoff 29
+scalar RSUExampleScenario.node[3].nic.mac1609_4 SlotsBackoff 37
+scalar RSUExampleScenario.node[3].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.node[3].nic.mac1609_4 totalBusyTime 1.339501
+scalar RSUExampleScenario.node[3].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.node[3].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.node[3].nic.mac1609_4 sentPackets:count 29
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.node[3].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.node[3].nic.mac1609_4 channelBusy:timeavg 0.014883344444444
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.node[3].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.node[3].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.node[3].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[3].veinsmobility notAffectedByHostState true
+par RSUExampleScenario.node[3].veinsmobility x 0
+par RSUExampleScenario.node[3].veinsmobility y 0
+par RSUExampleScenario.node[3].veinsmobility z 0
+par RSUExampleScenario.node[3].veinsmobility xOrientation 1
+par RSUExampleScenario.node[3].veinsmobility yOrientation 0
+par RSUExampleScenario.node[3].veinsmobility zOrientation 0
+par RSUExampleScenario.node[3].veinsmobility hostPositionOffset 0m
+attr unit m
+par RSUExampleScenario.node[3].veinsmobility setHostSpeed true
+par RSUExampleScenario.node[3].veinsmobility accidentCount 0
+par RSUExampleScenario.node[3].veinsmobility accidentStart 37.5987s
+attr unit s
+par RSUExampleScenario.node[3].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par RSUExampleScenario.node[3].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar RSUExampleScenario.node[3].veinsmobility startTime 10
+scalar RSUExampleScenario.node[3].veinsmobility totalTime 90
+scalar RSUExampleScenario.node[3].veinsmobility stopTime 100
+scalar RSUExampleScenario.node[3].veinsmobility minSpeed 0
+scalar RSUExampleScenario.node[3].veinsmobility maxSpeed 13.994833892267
+scalar RSUExampleScenario.node[3].veinsmobility totalDistance 926.94330396536
+scalar RSUExampleScenario.node[3].veinsmobility totalCO2Emission 195.14993239997
+par RSUExampleScenario.node[3] typename "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.node[3] applType "\"RavenVehicleApp\""
+par RSUExampleScenario.node[3] nicType "\"Nic80211p\""
+par RSUExampleScenario.node[3] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[4].appl typename "\"RavenVehicleApp\""
+par RSUExampleScenario.node[4].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.node[4].appl sendBeacons true
+par RSUExampleScenario.node[4].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.node[4].appl beaconUserPriority 7
+par RSUExampleScenario.node[4].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.node[4].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.node[4].appl dataOnSch false
+par RSUExampleScenario.node[4].appl dataUserPriority 7
+par RSUExampleScenario.node[4].appl avoidBeaconSynchronization true
+par RSUExampleScenario.node[4].appl sendWSA false
+par RSUExampleScenario.node[4].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.node[4].appl wsaInterval 1s
+attr unit s
+par RSUExampleScenario.node[4].appl isAttacker false
+scalar RSUExampleScenario.node[4].appl generatedWSMs 29
+scalar RSUExampleScenario.node[4].appl receivedWSMs 0
+scalar RSUExampleScenario.node[4].appl generatedBSMs 0
+scalar RSUExampleScenario.node[4].appl receivedBSMs 41
+scalar RSUExampleScenario.node[4].appl generatedWSAs 0
+scalar RSUExampleScenario.node[4].appl receivedWSAs 0
+par RSUExampleScenario.node[4].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.node[4].nic.phy80211p recordStats false
+par RSUExampleScenario.node[4].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.node[4].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.node[4].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.node[4].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.node[4].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.node[4].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.node[4].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.node[4].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.node[4].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[4].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.node[4].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.node[4].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.node[4].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.node[4].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.node[4].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.node[4].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.node[4].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.node[4].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.node[4].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.node[4].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.node[4].nic.phy80211p busyTime 0.012563310344828
+par RSUExampleScenario.node[4].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.node[4].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.node[4].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.node[4].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.node[4].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.node[4].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.node[4].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.node[4].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.node[4].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.node[4].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.node[4].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.node[4].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.node[4].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.node[4].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.node[4].nic.mac1609_4 useAcks false
+par RSUExampleScenario.node[4].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.node[4].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 ReceivedBroadcasts 145
+scalar RSUExampleScenario.node[4].nic.mac1609_4 SentPackets 29
+scalar RSUExampleScenario.node[4].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 SNIRLostPackets 43
+scalar RSUExampleScenario.node[4].nic.mac1609_4 RXTXLostPackets 39
+scalar RSUExampleScenario.node[4].nic.mac1609_4 TotalLostPackets 82
+scalar RSUExampleScenario.node[4].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 TimesIntoBackoff 29
+scalar RSUExampleScenario.node[4].nic.mac1609_4 SlotsBackoff 47
+scalar RSUExampleScenario.node[4].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.node[4].nic.mac1609_4 totalBusyTime 1.331837
+scalar RSUExampleScenario.node[4].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.node[4].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.node[4].nic.mac1609_4 sentPackets:count 29
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.node[4].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.node[4].nic.mac1609_4 channelBusy:timeavg 0.015308471264368
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.node[4].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.node[4].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.node[4].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.node[4].veinsmobility notAffectedByHostState true
+par RSUExampleScenario.node[4].veinsmobility x 0
+par RSUExampleScenario.node[4].veinsmobility y 0
+par RSUExampleScenario.node[4].veinsmobility z 0
+par RSUExampleScenario.node[4].veinsmobility xOrientation 1
+par RSUExampleScenario.node[4].veinsmobility yOrientation 0
+par RSUExampleScenario.node[4].veinsmobility zOrientation 0
+par RSUExampleScenario.node[4].veinsmobility hostPositionOffset 0m
+attr unit m
+par RSUExampleScenario.node[4].veinsmobility setHostSpeed true
+par RSUExampleScenario.node[4].veinsmobility accidentCount 0
+par RSUExampleScenario.node[4].veinsmobility accidentStart 44.1966s
+attr unit s
+par RSUExampleScenario.node[4].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par RSUExampleScenario.node[4].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar RSUExampleScenario.node[4].veinsmobility startTime 13
+scalar RSUExampleScenario.node[4].veinsmobility totalTime 87
+scalar RSUExampleScenario.node[4].veinsmobility stopTime 100
+scalar RSUExampleScenario.node[4].veinsmobility minSpeed 0
+scalar RSUExampleScenario.node[4].veinsmobility maxSpeed 13.998651232829
+scalar RSUExampleScenario.node[4].veinsmobility totalDistance 921.97124547409
+scalar RSUExampleScenario.node[4].veinsmobility totalCO2Emission 187.42980921487
+par RSUExampleScenario.node[4] typename "\"org.car2x.veins.nodes.Car\""
+par RSUExampleScenario.node[4] applType "\"RavenVehicleApp\""
+par RSUExampleScenario.node[4] nicType "\"Nic80211p\""
+par RSUExampleScenario.node[4] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par RSUExampleScenario.rsu[0].appl typename "\"RavenRSUApp\""
+par RSUExampleScenario.rsu[0].appl headerLength 256bit
+attr unit bit
+par RSUExampleScenario.rsu[0].appl sendBeacons true
+par RSUExampleScenario.rsu[0].appl beaconLengthBits 256bit
+attr unit bit
+par RSUExampleScenario.rsu[0].appl beaconUserPriority 7
+par RSUExampleScenario.rsu[0].appl beaconInterval 1s
+attr unit s
+par RSUExampleScenario.rsu[0].appl dataLengthBits 1024bit
+attr unit bit
+par RSUExampleScenario.rsu[0].appl dataOnSch false
+par RSUExampleScenario.rsu[0].appl dataUserPriority 5
+par RSUExampleScenario.rsu[0].appl avoidBeaconSynchronization true
+par RSUExampleScenario.rsu[0].appl sendWSA false
+par RSUExampleScenario.rsu[0].appl wsaLengthBits 250bit
+attr unit bit
+par RSUExampleScenario.rsu[0].appl wsaInterval 1s
+attr unit s
+scalar RSUExampleScenario.rsu[0].appl generatedWSMs 125
+scalar RSUExampleScenario.rsu[0].appl receivedWSMs 0
+scalar RSUExampleScenario.rsu[0].appl generatedBSMs 100
+scalar RSUExampleScenario.rsu[0].appl receivedBSMs 0
+scalar RSUExampleScenario.rsu[0].appl generatedWSAs 0
+scalar RSUExampleScenario.rsu[0].appl receivedWSAs 0
+par RSUExampleScenario.rsu[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par RSUExampleScenario.rsu[0].nic.phy80211p recordStats false
+par RSUExampleScenario.rsu[0].nic.phy80211p usePropagationDelay true
+par RSUExampleScenario.rsu[0].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par RSUExampleScenario.rsu[0].nic.phy80211p useNoiseFloor true
+par RSUExampleScenario.rsu[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//antenna.xml:35"
+par RSUExampleScenario.rsu[0].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par RSUExampleScenario.rsu[0].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par RSUExampleScenario.rsu[0].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par RSUExampleScenario.rsu[0].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par RSUExampleScenario.rsu[0].nic.phy80211p analogueModels "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.rsu[0].nic.phy80211p decider "<root>...</root> at /home/proxy_021/ACSP/omnetpp-6.2.0/7_impt/veins-5.3.1/veins-veins-5.3.1/examples/veins//config.xml:34"
+par RSUExampleScenario.rsu[0].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par RSUExampleScenario.rsu[0].nic.phy80211p timeRXToTX 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p timeTXToRX 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.phy80211p initialRadioState 0
+par RSUExampleScenario.rsu[0].nic.phy80211p radioMinAtt 1
+par RSUExampleScenario.rsu[0].nic.phy80211p radioMaxAtt 0
+par RSUExampleScenario.rsu[0].nic.phy80211p nbRadioChannels 1
+par RSUExampleScenario.rsu[0].nic.phy80211p initialRadioChannel 0
+par RSUExampleScenario.rsu[0].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par RSUExampleScenario.rsu[0].nic.phy80211p collectCollisionStatistics false
+par RSUExampleScenario.rsu[0].nic.phy80211p allowTxDuringRx false
+scalar RSUExampleScenario.rsu[0].nic.phy80211p busyTime 0.02580304
+par RSUExampleScenario.rsu[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par RSUExampleScenario.rsu[0].nic.mac1609_4 notAffectedByHostState false
+par RSUExampleScenario.rsu[0].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par RSUExampleScenario.rsu[0].nic.mac1609_4 address "\"auto\""
+par RSUExampleScenario.rsu[0].nic.mac1609_4 useServiceChannel false
+par RSUExampleScenario.rsu[0].nic.mac1609_4 serviceChannel 1
+par RSUExampleScenario.rsu[0].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par RSUExampleScenario.rsu[0].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par RSUExampleScenario.rsu[0].nic.mac1609_4 txPower 20mW
+attr unit mW
+par RSUExampleScenario.rsu[0].nic.mac1609_4 queueSize 0
+par RSUExampleScenario.rsu[0].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par RSUExampleScenario.rsu[0].nic.mac1609_4 dot11ShortRetryLimit 7
+par RSUExampleScenario.rsu[0].nic.mac1609_4 dot11LongRetryLimit 4
+par RSUExampleScenario.rsu[0].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par RSUExampleScenario.rsu[0].nic.mac1609_4 useAcks false
+par RSUExampleScenario.rsu[0].nic.mac1609_4 frameErrorRate 0
+par RSUExampleScenario.rsu[0].nic.mac1609_4 ackErrorRate 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 ReceivedBroadcasts 50
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 SentPackets 225
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 SentAcknowledgements 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 RetriesExceeded 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 SNIRLostPackets 100
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 RXTXLostPackets 3
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 TotalLostPackets 103
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 TooLittleTime 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 TimesIntoBackoff 226
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 SlotsBackoff 612
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 NumInternalContention 0
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 totalBusyTime 1.304329
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 sentPackets:count 225
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar RSUExampleScenario.rsu[0].nic.mac1609_4 channelBusy:timeavg 0.01304329
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par RSUExampleScenario.rsu[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par RSUExampleScenario.rsu[0].nic connectionManagerName "\"connectionManager\""
+par RSUExampleScenario.rsu[0].mobility typename "\"org.car2x.veins.base.modules.BaseMobility\""
+par RSUExampleScenario.rsu[0].mobility notAffectedByHostState true
+par RSUExampleScenario.rsu[0].mobility x 2000
+par RSUExampleScenario.rsu[0].mobility y 2000
+par RSUExampleScenario.rsu[0].mobility z 3
+par RSUExampleScenario.rsu[0].mobility xOrientation 1
+par RSUExampleScenario.rsu[0].mobility yOrientation 0
+par RSUExampleScenario.rsu[0].mobility zOrientation 0
+par RSUExampleScenario.rsu[0] typename "\"org.car2x.veins.nodes.RSU\""
+par RSUExampleScenario.rsu[0] applType "\"RavenRSUApp\""
+par RSUExampleScenario.rsu[0] nicType "\"Nic80211p\""
+par RSUExampleScenario typename "\"RSUExampleScenario\""
+par RSUExampleScenario playgroundSizeX 2500m
+attr unit m
+par RSUExampleScenario playgroundSizeY 2500m
+attr unit m
+par RSUExampleScenario playgroundSizeZ 50m
+attr unit m
+
